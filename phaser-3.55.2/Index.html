@@ -24,7 +24,7 @@
                 gravity: {y: 300},
                 debug: false
             }
-            },
+        },
         scene: {
             preload: preload,
             create: create,
@@ -43,18 +43,19 @@
         this.load.image('bomb', 'assets/bomb.png');
         this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
     }
-        var platforms;
-        var player;
-        var stars;
-        var cursors;
-        var score = 0;
-        var scoreText;
-        var bombs;
+    var platforms;
+    var player;
+    var stars;
+    var cursors;
+    var score = 0;
+    var scoreText;
+    var bombs;
 
     function create ()
     {
-        //Platforms
         this.add.image(400, 300, 'sky');
+        //Platforms
+
 
         platforms = this.physics.add.staticGroup();
 
@@ -94,7 +95,7 @@
         stars= this.physics.add.group({
             key:'star',
             repeat: 11,
-            setXY: {x:12, y:0, stepX:70 }
+            setXY: {x:120, y:0, stepX:70 }
         });
         stars.children.iterate(function (child) {
             child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8))
